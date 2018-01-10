@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
 
             @if (Session::has('message'))
             <p class="alert alert-success">{{ Session::get('message') }}</p>
@@ -11,8 +11,8 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Genres</h3>
-                    <!-- <a href="{{ route('genres.create') }}" class="btn btn-link">Add</a> -->
+                    <h3>Genre</h3>
+                    <a href="{{ route('genres.create') }}" class="btn btn-primary">Add</a>
                 </div>  <!-- End panel-heading -->
                 <div class="panel-body">
                     @if (count($genres) === 0)
