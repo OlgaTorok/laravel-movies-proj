@@ -13,6 +13,7 @@
                 <div class="panel-heading">
                     <h3>Movies</h3>
                     <a href="{{ route('movies.create') }}" class="btn btn-primary">Add</a>
+                    <a href="{{ route('home') }}" class="btn btn-success">Menu</a>
                 </div>  <!-- End panel-heading -->
                 <div class="panel-body">
                     @if (count($movies) === 0)
