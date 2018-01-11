@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Genre;
 
@@ -12,12 +13,12 @@ class GenreController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response.
      */
     public function index()
     {
         //
-        $genres = Genre::all();
+        $genres = Genre::orderBy('name', 'ASC')->get();
         return view('genres.index')->with(array(
             'genres' => $genres
         ));

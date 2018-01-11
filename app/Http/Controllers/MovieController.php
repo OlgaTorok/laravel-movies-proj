@@ -18,7 +18,7 @@ class MovieController extends Controller
     {
         // Get all the movies existent
         // and return them as an array
-        $movies = Movie::all();
+        $movies = Movie::orderBy('title', 'ASC')->get();
         return view('movies.index')->with(array(
             'movies' => $movies
         ));
