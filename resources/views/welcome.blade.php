@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #B492A8;
-                color: #636b6f;
+                background-color: #accc74;
+                color: #cc74ac;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -47,10 +47,11 @@
 
             .title {
                 font-size: 84px;
+                font-weight: 400;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #cc74ac;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
