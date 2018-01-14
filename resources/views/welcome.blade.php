@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #accc74;
+                background-color: #CF4653;
                 color: #cc74ac;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
