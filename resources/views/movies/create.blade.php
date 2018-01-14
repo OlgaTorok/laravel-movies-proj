@@ -38,7 +38,7 @@
                         </div>
 
                         <a href="{{ route('movies.index') }}" class="btn btn-default">Cancel</a>
-                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                        <button type="submit" id="btn-submit" class="btn btn-primary pull-right">Submit</button>
                     </form>
                 </div>
             </div>

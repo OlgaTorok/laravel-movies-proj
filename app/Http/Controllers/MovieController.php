@@ -142,4 +142,145 @@ class MovieController extends Controller
 
         return redirect()->route('movies.index');
     }
+
+    /*
+    *************************
+    *     APIs functions
+    *************************
+    */
+
+    public function apiIndex()
+   {
+       $data = Movie::all();
+       $status = 200;
+       $response = array(
+           'status' => $status,
+           'data' => $data
+       );
+
+       return response()->json($response);
+   }
+
+
+   public function apiShow($id)
+    {
+        $movie = Movie::find($id);
+        if ($movie === null) {
+            $status = 404;
+            $data = null;
+        }
+        else {
+            $status = 200;
+            $data = $movie;
+        }
+        $response = array(
+            'status' => $status,
+            'data' => $data
+        );
+
+        return response()->json($response);
+    }
+
+    public function apiStore(Request $request)
+    {
+        $content = $request->getContent();
+        $request->merge((array)json_decode($content));
+
+        $rules = [
+            'title' => 'required|max:191',
+            'length' => 'required|max:191',
+            'year' => 'required|integer|min:1800',
+            'rating' => 'required|numeric|min:0'
+        ];
+        $validation = Validator::make($request->all(), $rules);
+
+        if ($validation->fails()) {
+            $data = $validation->getMessageBag();
+            $status = 422;
+        }
+        else {
+            $movie = new Movie();
+            $movie->title = $request->input('title');
+            $movie->length = $request->input('length');
+            $movie->year = $request->input('year');
+            $movie->rating = $request->input('rating');
+            $movie->save();
+
+            $data = $movie;
+            $status = 200;
+        }
+
+        $response = array(
+            'status' => $status,
+            'data' => $data
+        );
+        return response()->json($response);
+    }
+
+
+    public function apiUpdate(Request $request, $id)
+    {
+        $movie = Movie::find($id);
+        if ($movie === null) {
+            $data = null;
+            $status = 404;
+        }
+        else {
+            $content = $request->getContent();
+            $request->merge((array)json_decode($content));
+
+            $rules = [
+                'title' => 'required|max:191',
+                'length' => 'required|max:191',
+                'year' => 'required|integer|min:1800',
+                'rating' => 'required|numeric|min:0'
+            ];
+            $validation = Validator::make($request->all(), $rules);
+
+            if ($validation->fails()) {
+                $data = $validation->getMessageBag();
+                $status = 422;
+            }
+            else {
+                $movie->title = $request->input('title');
+                $movie->length = $request->input('length');
+                $movie->year = $request->input('year');
+                $movie->rating = $request->input('rating');
+                $movie->save();
+
+                $data = $movie;
+                $status = 200;
+            }
+        }
+
+        $response = array(
+            'status' => $status,
+            'data' => $data
+        );
+        return response()->json($response);
+    }
+
+
+    public function apiDelete(Request $request, $id)
+    {
+        $movie = Movie::find($id);
+        if ($movie === null) {
+            $data = null;
+            $status = 404;
+        }
+        else {
+            $movie->delete();
+            $data = null;
+            $status = 200;
+        }
+
+        $response = array(
+            'status' => $status,
+            'data' => $data
+        );
+        return response()->json($response);
+    }
+
+
+
 }

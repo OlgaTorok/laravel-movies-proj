@@ -5,13 +5,14 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
-            @if (Session::has('message'))
+            <!-- @if (Session::has('message'))
             <p class="alert alert-success">{{ Session::get('message') }}</p>
-            @endif
+            @endif -->
 
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3>Genre</h3>
+                    <a href="{{ route('genres.create') }}" class="btn btn-primary">Add</a>
                     <a href="{{ route('home') }}" class="btn btn-success">Menu</a>
                 </div>  <!-- End panel-heading -->
                 <div class="panel-body">
