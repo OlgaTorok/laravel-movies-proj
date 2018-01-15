@@ -82,11 +82,6 @@
                 <div class="title m-b-md">
                     Movies
                 </div>
-
-                <!-- <div class="links">
-                    <a href="http://www.imdb.com">imdb</a>
-                    <a href="http://www.movies.ie/">Movies.ie</a>
-                </div> -->
             </div>
         </div>
     </body>

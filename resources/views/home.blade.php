@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-11 col-md-offset-1">
                             <a href="{{ route('movies.index') }}" class="btn btn-success">Movies</a>
-                            <a href="{{ route('genres.index') }}" class="btn btn-success">Genres</a>
+                            <a href="{{ route('reviews.index') }}" class="btn btn-success">Reviews</a>
                         </div>
                     </div>
                     <br />

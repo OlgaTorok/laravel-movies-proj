@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Resources are added to be used when necessary
 
 Route::resource('movies', 'MovieController');
-Route::resource('genres', 'GenreController');
+Route::resource('reviews', 'ReviewController');
