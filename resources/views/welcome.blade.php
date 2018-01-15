@@ -80,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Movies
+                    <h1>Movies</h1>
                 </div>
             </div>
         </div>
