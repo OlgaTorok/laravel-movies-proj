@@ -28,6 +28,8 @@
                                 <td>Rating</td>
                                 <td>{{ $movie->rating }}</td>
                             </tr>
+                            <hr />
+                            
                         </tbody>
                     </table>
                     <a href="{{ route('movies.index') }}" class="btn btn-default">Back</a>

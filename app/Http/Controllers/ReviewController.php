@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Validator;
+use App\Review;
 
 class ReviewController extends Controller
 {
@@ -29,7 +32,7 @@ class ReviewController extends Controller
     public function create()
     {
         // Redirect to the create page
-        return view('reviews.create');
+        // return view('reviews.create');
     }
 
     /**

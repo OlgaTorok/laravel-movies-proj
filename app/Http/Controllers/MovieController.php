@@ -16,8 +16,9 @@ class MovieController extends Controller
      */
     public function index()
     {
-        // Get all the movies existent
+        // Retrieve all the movies from the database
         // and return them as an array
+        // and pass the array to the index file
         $movies = Movie::orderBy('title', 'ASC')->get();
         return view('movies.index')->with(array(
             'movies' => $movies
@@ -32,6 +33,7 @@ class MovieController extends Controller
     public function create()
     {
         // Redirect to the page create
+        // which is in movies folder
         return view('movies.create');
     }
 
